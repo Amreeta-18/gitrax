@@ -89,6 +89,7 @@ class GitLookup(object):
                                         for item in sv:
                                             email = item["author"]["email"]
                                             email_list.append(email)
+                                            # print(email)
                 else:
                     # exiting loop
                     count = count + 10
@@ -266,7 +267,10 @@ def main(args):
                 print('\n')
         else:
             for item in result:
-                print(item)
+                with open("emails.txt", "a") as file:
+                    file.write(item + "\n")
+                # print(item)
+            file.close()
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 
